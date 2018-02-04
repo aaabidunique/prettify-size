@@ -1,6 +1,6 @@
 # prettify-size
 Extremely light java prettifying library for file/content size.
-[![JitPack](https://img.shields.io/jitpack/v/jitpack/maven-simple.svg)]()
+[![JitPack](https://img.shields.io/jitpack/v/jitpack/maven-simple.svg)](https://jitpack.io/#aaabidunique/prettify-size)
 
 For integration refer [here](https://github.com/aaabidunique/prettify-size/wiki/Integration)
 For Usage docs refer [here](https://github.com/aaabidunique/prettify-size/wiki/Usage)
