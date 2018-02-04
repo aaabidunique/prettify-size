@@ -20,11 +20,11 @@ public class PrettifySize {
 		BIT, BYTE
 	}
 
-	public static String prettify(final long size, boolean shortForm) {
-		return prettify(size, PrettifySizeUnit.BYTE, shortForm);
+	public static String prettify(final long size) {
+		return prettify(size, PrettifySizeUnit.BYTE, true);
 	}
 
-	public static String prettify(final long size, PrettifySizeUnit prettifySizeUnit, boolean shortForm) {
+	public static String prettify(final long size, PrettifySizeUnit prettifySizeUnit, boolean prettifyInShortForm) {
 		LOG.info("Trying to prettify size for input size : " + size + " with size unit as : " + prettifySizeUnit);
 		String result = null;
 		String sizeGroup[] = null;
@@ -41,7 +41,7 @@ public class PrettifySize {
 			result = "0";
 		} else {
 			unit = getUnits(prettifySizeUnit);
-			sizeGroup = getSizeGroup(prettifySizeUnit, shortForm);
+			sizeGroup = getSizeGroup(prettifySizeUnit, prettifyInShortForm);
 			int digitGroups = (int) (Math.log10(size) / Math.log10(unit));
 			result = new DecimalFormat("#,##0.#").format(size / Math.pow(unit, digitGroups)) + " " + sizeGroup[digitGroups];
 		}
@@ -53,16 +53,16 @@ public class PrettifySize {
 		return prettifySizeUnit == PrettifySizeUnit.BIT ? 1000 : 1024;
 	}
 
-	private static String[] getSizeGroup(PrettifySizeUnit prettifySizeUnit, boolean shortForm) {
+	private static String[] getSizeGroup(PrettifySizeUnit prettifySizeUnit, boolean prettifyInShortForm) {
 		String[] sizeGroup = null;
 		if (prettifySizeUnit == PrettifySizeUnit.BIT) {
-			if (shortForm) {
+			if (prettifyInShortForm) {
 				sizeGroup = BIT_UNITS_SHORT;
 			} else {
 				sizeGroup = BIT_UNITS_FULL;
 			}
 		} else {
-			if (shortForm) {
+			if (prettifyInShortForm) {
 				sizeGroup = BYTE_UNITS_SHORT;
 			} else {
 				sizeGroup = BYTE_UNITS_FULL;
