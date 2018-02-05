@@ -1,6 +1,7 @@
 # prettify-size
 Extremely light java prettifying library for file/content size.
-[![JitPack](https://img.shields.io/jitpack/v/jitpack/maven-simple.svg)](https://jitpack.io/#aaabidunique/prettify-size)
+
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html) [![JitPack](https://img.shields.io/jitpack/v/jitpack/maven-simple.svg)](https://jitpack.io/#aaabidunique/prettify-size) [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/aaabidunique/prettify-size)
 
 For integration refer [here](https://github.com/aaabidunique/prettify-size/wiki/Integration)
 For Usage docs refer [here](https://github.com/aaabidunique/prettify-size/wiki/Usage)
